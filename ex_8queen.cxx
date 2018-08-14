@@ -37,7 +37,7 @@ bool backtrack(int col, int side)
 
 int main()
 {
-    int side = 4;
+    int side = 30;
     // std::cin >> side;
     positionInRow.resize(side, -1);
 
