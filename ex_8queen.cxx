@@ -1,8 +1,9 @@
-// From the book "Competitive Programming 3" by Steven and Felix Halim.
+// Based in solution the backtrack solution presented in 
+// presented the book "Competitive Programming 3" by Steven and Felix Halim.
+
 #include <iostream>
 #include <vector>
 
-// int side, row[8], a, b, lineCounter;⁄
 std::vector<int> positionInRow;
 
 bool canPlaceIn(int row, int col)
@@ -20,6 +21,7 @@ bool backtrack(int col, int side)
 {
     if (col >= side)
         return true;
+
     for (int row = 0; row < side; ++row)
     {
         if (canPlaceIn(row, col))
@@ -32,12 +34,17 @@ bool backtrack(int col, int side)
     return false;
 }
 
+
 int main()
 {
-    int side = 8;
+    int side = 4;
     // std::cin >> side;
     positionInRow.resize(side, -1);
-    backtrack(0, side);
-    for(auto i : positionInRow) std::cout << i << " ";
-    std::cout << std::endl;
+
+    if (backtrack(0, side))
+    {
+        for (auto i : positionInRow)
+            std::cout << i << " ";
+        std::cout << std::endl;
+    }
 }

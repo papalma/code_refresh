@@ -1,3 +1,5 @@
+// From book "Competitive Programming 3" by Steve and Felix Halim.
+
 #include <iostream>
 #include <vector>
 
