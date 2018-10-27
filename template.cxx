@@ -1,6 +1,5 @@
-// By Patricio Palma Contreras <patriciop@gmail.com>
-// 2018
-
+// By Patricio Palma Contreras <patriciop@gmail.com> 
+// Santiago 2018
 #include <iostream>
 
 using namespace std;
