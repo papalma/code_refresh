@@ -1,3 +1,4 @@
+// By Patricio Palma Contreras <patriciop@gmail.com> 
 #ifndef MY_CUSTOM_DEBUG_PRINT
 #define MY_CUSTOM_DEBUG_PRINT
 
