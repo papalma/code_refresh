@@ -2,6 +2,8 @@
 #define MY_CUSTOM_DEBUG_PRINT
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 namespace std {
 
@@ -19,24 +21,36 @@ void println(const T& t, Args... args)
 }
 
 template<typename T, typename U>
-ostream& operator<<(ostream& os, const pair<T,U>& t) 
+ostream& operator<<(ostream& os, pair<T,U>& t) 
 {
-    os << '(' << t.first << ',' << t.second << ')';
+    os << '(';
+    os << t.first << ',' << t.second << ')';
     return os;
 }
 
 // this should match most common containers
 template<template <typename...> class C, typename... Ts>
-ostream& operator<<(ostream& os, const C<Ts...>& v) 
+ostream& operator<<(ostream& os,const C<Ts...>& v) 
 {
     os << "[";
     bool first = true;
-    for(auto e : v) {
+    for( auto e : v) {
         if(!first) cout << ',';
         first = false;
         os << e;
     }
     os << "]";
+    return os;
+}
+
+// this matches strings
+ostream& operator<<(ostream& os, const string& s)
+{
+    auto sb = stringbuf(s);
+    os << '\'';
+    os.operator<<(&sb);
+    os << '\'';
+
     return os;
 }
 
